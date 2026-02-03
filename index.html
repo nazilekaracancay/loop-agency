@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LOOP Agency — Dijital Büyüme Partneri</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIzLjUiIGZpbGw9IiNjOGZmMDAiLz4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGZmMDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBhdGggZD0iTTE0IDcgTDE0IDIzIEwyNiAyMyIgc3Ryb2tlPSIjZjBlY2U0IiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIzLjUiIGZpbGw9IiNjOGZmMDAiLz4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGZmMDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBhdGggZD0iTTE0IDcgTDE0IDIzIEwyNiAyMyIgc3Ryb2tlPSIjZjBlY2U0IiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -599,30 +601,30 @@
     <div class="section-label" style="justify-content:center;"><div class="section-label-line"></div><span>İletişim</span></div>
     <h2>Konuşalım</h2>
   </div>
-  <div class="contact-form reveal">
-    <div class="form-group"><label>Ad Soyad</label><input type="text" placeholder="Mehmet Yılmaz"></div>
-    <div class="form-group"><label>Email</label><input type="email" placeholder="mehmet@marka.com"></div>
-    <div class="form-group"><label>Telefon</label><input type="tel" placeholder="+90 532 XXX XX XX"></div>
-    <div class="form-group"><label>Marka / Şirket Adı</label><input type="text" placeholder="Marka Adı"></div>
+  <form class="contact-form reveal" action="https://formspree.io/f/maqbzqve" method="POST">
+    <div class="form-group"><label>Ad Soyad</label><input type="text" name="Ad Soyad" placeholder="Mehmet Yılmaz" required></div>
+    <div class="form-group"><label>Email</label><input type="email" name="Email" placeholder="mehmet@marka.com" required></div>
+    <div class="form-group"><label>Telefon</label><input type="tel" name="Telefon" placeholder="+90 532 XXX XX XX"></div>
+    <div class="form-group"><label>Marka / Şirket Adı</label><input type="text" name="Marka" placeholder="Marka Adı"></div>
     <div class="form-group full">
       <label>İlgilendiğiniz Hizmet</label>
-      <select>
+      <select name="Hizmet">
         <option value="">Bir seçenek yapın</option>
         <optgroup label="Paketler">
-          <option>Basic — Shopify Mağaza Kurulumu</option>
-          <option>Pro — Mağaza + Meta Reklam Başlangıç</option>
-          <option>Aylık Danışmanlık — Meta Reklam Yönetimi</option>
-          <option>Elit — Marka Danışmanlığı &amp; Konumlandırma</option>
+          <option value="Basic">Basic — Shopify Mağaza Kurulumu</option>
+          <option value="Pro">Pro — Mağaza + Meta Reklam Başlangıç</option>
+          <option value="Aylık">Aylık Danışmanlık — Meta Reklam Yönetimi</option>
+          <option value="Elit">Elit — Marka Danışmanlığı &amp; Konumlandırma</option>
         </optgroup>
-        <optgroup label="Diğer"><option>Özel Teklif Talep Ediyorum</option></optgroup>
+        <optgroup label="Diğer"><option value="Özel">Özel Teklif Talep Ediyorum</option></optgroup>
       </select>
     </div>
-    <div class="form-group full"><label>Mesajınız</label><textarea placeholder="Markanız ve hedefleriniz hakkında kısaca bilgi verin..."></textarea></div>
+    <div class="form-group full"><label>Mesajınız</label><textarea name="Mesaj" placeholder="Markanız ve hedefleriniz hakkında kısaca bilgi verin..." required></textarea></div>
     <div class="form-submit">
       <p class="kvkk-note">Bu formu doldurarak <a href="#" onclick="event.preventDefault();document.getElementById('kvkk-modal').classList.add('active')">Kişisel Verilerin Korunma Politikası</a>'nı okuduğunuzu ve kabul ettiğinizi onaylıyorsunuz.</p>
-      <button class="btn-primary">Mesaj Gönder</button>
+      <button type="submit" class="btn-primary">Mesaj Gönder</button>
     </div>
-  </div>
+  </form>
 </section>
 
 <!-- FOOTER -->
@@ -638,7 +640,7 @@
         </div>
         <div class="footer-address-item">
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span>iletisim@loopagency.com</span>
+          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f76737a6b766c76725f7370706f7e787a717c66317c7072">[email&#160;protected]</a></span>
         </div>
       </div>
     </div>
@@ -670,7 +672,7 @@
     <h4>5. Verilerin Üçüncü Taraflarla Paylaşımı</h4>
     <p>Kişisel veriler, yasal zorunluluk olmadıkça üçüncü taraflarla paylaşılmayacaktır. Hizmet alınan üçüncü taraf yazı yazılı sözleşmeler dahilinde veri güvenliği yükümlülüğünü yerine getirmektedir.</p>
     <h4>6. Veri Sahibinin Hakları</h4>
-    <p>KVKK'nın 11. maddesi kapsamında veri sahibi olarak; kişisel verilerin işlenip işlenmediğini öğrenme, işlenen verilere ilişkin bilgi edinme, verilerin düzeltilmesi, silinmesi veya imha edilmesi ile itiraz etme haklarına sahipsiniz. Bu hakları kullanmak için <strong>iletisim@loopagency.com</strong> adresine başvurabilirsiniz.</p>
+    <p>KVKK'nın 11. maddesi kapsamında veri sahibi olarak; kişisel verilerin işlenip işlenmediğini öğrenme, işlenen verilere ilişkin bilgi edinme, verilerin düzeltilmesi, silinmesi veya imha edilmesi ile itiraz etme haklarına sahipsiniz. Bu hakları kullanmak için <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29b9e97869b819b9fb29e9d9d829395979c918bdc919d9f">[email&#160;protected]</a></strong> adresine başvurabilirsiniz.</p>
     <h4>7. Çerezlerin Kullanımı</h4>
     <p>Web sitemizde zorunlu ve analitik çerezler kullanılmaktadır. Çerezler, deneyiminizi kişiselleştirmek ve siteyi geliştirmek amacıyla, tarayıcı tercihleriniz aracılığıyla kapatılabilir.</p>
     <h4>8. Politikanın Değiştirilmesi</h4>
@@ -679,7 +681,7 @@
 </div>
 
 <!-- JS -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
