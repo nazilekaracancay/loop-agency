@@ -227,6 +227,74 @@
   .reveal { opacity:0; transform:translateY(30px); transition:opacity .8s,transform .8s; }
   .reveal.visible { opacity:1; transform:translateY(0); }
 
+  /* TEŞEKKÜR OVERLAY */
+  .thanks-overlay {
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    z-index:600;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    backdrop-filter:blur(6px);
+  }
+  .thanks-overlay.active { display:flex; }
+  .thanks-box {
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-radius:12px;
+    max-width:480px;
+    width:100%;
+    padding:64px 48px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .thanks-box::before {
+    content:'';
+    position:absolute;
+    top:-60px; left:50%;
+    transform:translateX(-50%);
+    width:300px; height:200px;
+    background:radial-gradient(ellipse,rgba(200,255,0,0.1) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .thanks-icon {
+    width:72px; height:72px;
+    border-radius:50%;
+    background:var(--accent-dim);
+    border:2px solid var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 32px;
+    position:relative; z-index:1;
+  }
+  .thanks-icon svg { width:32px; height:32px; stroke:var(--accent); fill:none; stroke-width:2.5; }
+  .thanks-box h3 {
+    font-family:var(--font-display);
+    font-size:32px;
+    letter-spacing:2px;
+    margin-bottom:16px;
+    position:relative; z-index:1;
+  }
+  .thanks-box p {
+    color:var(--text-secondary);
+    font-size:15px;
+    line-height:1.7;
+    max-width:340px;
+    margin:0 auto;
+    position:relative; z-index:1;
+  }
+  .thanks-box .thanks-btn {
+    margin-top:36px;
+    position:relative; z-index:1;
+  }
+  @media(max-width:600px){
+    .thanks-box { padding:48px 28px; }
+    .thanks-box h3 { font-size:26px; }
+    .thanks-box p { font-size:14px; }
+  }
+
   @keyframes fadeUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
 
   /* RESPONSIVE */
@@ -640,7 +708,7 @@
         </div>
         <div class="footer-address-item">
           <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1f76737a6b766c76725f7370706f7e787a717c66317c7072">[email&#160;protected]</a></span>
+          <span>info@loopagency.com</span>
         </div>
       </div>
     </div>
@@ -672,7 +740,7 @@
     <h4>5. Verilerin Üçüncü Taraflarla Paylaşımı</h4>
     <p>Kişisel veriler, yasal zorunluluk olmadıkça üçüncü taraflarla paylaşılmayacaktır. Hizmet alınan üçüncü taraf yazı yazılı sözleşmeler dahilinde veri güvenliği yükümlülüğünü yerine getirmektedir.</p>
     <h4>6. Veri Sahibinin Hakları</h4>
-    <p>KVKK'nın 11. maddesi kapsamında veri sahibi olarak; kişisel verilerin işlenip işlenmediğini öğrenme, işlenen verilere ilişkin bilgi edinme, verilerin düzeltilmesi, silinmesi veya imha edilmesi ile itiraz etme haklarına sahipsiniz. Bu hakları kullanmak için <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29b9e97869b819b9fb29e9d9d829395979c918bdc919d9f">[email&#160;protected]</a></strong> adresine başvurabilirsiniz.</p>
+    <p>KVKK'nın 11. maddesi kapsamında veri sahibi olarak; kişisel verilerin işlenip işlenmediğini öğrenme, işlenen verilere ilişkin bilgi edinme, verilerin düzeltilmesi, silinmesi veya imha edilmesi ile itiraz etme haklarına sahipsiniz. Bu hakları kullanmak için <strong>info@loopagency.com</strong> adresine başvurabilirsiniz.</p>
     <h4>7. Çerezlerin Kullanımı</h4>
     <p>Web sitemizde zorunlu ve analitik çerezler kullanılmaktadır. Çerezler, deneyiminizi kişiselleştirmek ve siteyi geliştirmek amacıyla, tarayıcı tercihleriniz aracılığıyla kapatılabilir.</p>
     <h4>8. Politikanın Değiştirilmesi</h4>
@@ -680,8 +748,20 @@
   </div>
 </div>
 
-<!-- JS -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<!-- TEŞEKKÜR OVERLAY -->
+<div class="thanks-overlay" id="thanks-overlay">
+  <div class="thanks-box">
+    <div class="thanks-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h3>Teşekkür Ederiz!</h3>
+    <p>Mesajınız başarıyla iletildi. Sizinle en kısa sürede iletişime geçeceğiz.</p>
+    <div class="thanks-btn">
+      <button class="btn-primary" onclick="document.getElementById('thanks-overlay').classList.remove('active')">Ana Sayfaya Dön</button>
+    </div>
+  </div>
+</div>
+<script>
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
@@ -714,6 +794,20 @@
       const target = document.querySelector(a.getAttribute('href'));
       if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
+  });
+
+  document.querySelector('form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    try {
+      await fetch('https://formspree.io/f/maqbzqve', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch(err) {}
+    document.getElementById('thanks-overlay').classList.add('active');
+    this.reset();
   });
 </script>
 </body>
