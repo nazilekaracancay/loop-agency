@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — LOOP Agency | Dijital Büyüme İçgörüleri</title>
+<meta name="description" content="E-ticaret, profesyonel web siteleri ve dijital pazarlama hakkında uzman içgörüleri. Shopify, Meta reklamları, SEO ve daha fazlası.">
+<meta name="keywords" content="e-ticaret blog, shopify rehberi, meta reklamları, seo ipuçları, dijital pazarlama">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIzLjUiIGZpbGw9IiNjOGZmMDAiLz4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGZmMDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBhdGggZD0iTTE0IDcgTDE0IDIzIEwyNiAyMyIgc3Ryb2tlPSIjZjBlY2U0IiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-surface: #111;
+  --bg-card: #161616;
+  --text-primary: #f0ece4;
+  --text-secondary: #7a756a;
+  --text-muted: #4a4540;
+  --accent: #c8ff00;
+  --accent-dim: rgba(200,255,0,0.12);
+  --border: rgba(255,255,255,0.06);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'IBM Plex Serif', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.nav-back {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+
+.nav-back:hover {
+  color: var(--accent);
+}
+
+/* HERO */
+.blog-hero {
+  padding: 140px 48px 80px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-surface) 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.blog-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 8vw, 96px);
+  letter-spacing: 2px;
+  line-height: .95;
+}
+
+.blog-hero p {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-style: italic;
+}
+
+/* CATEGORIES */
+.categories {
+  padding: 48px 48px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.categories-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  padding: 10px 24px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.category-tag:hover,
+.category-tag.active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+}
+
+/* POSTS GRID */
+.posts-section {
+  padding: 80px 48px 120px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+.post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  transition: transform .3s, border-color .3s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.post-image {
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.post-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.post-category {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--accent);
+  color: #0a0a0a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.post-content {
+  padding: 28px 24px;
+}
+
+.post-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.post-excerpt {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* FOOTER */
+footer {
+  padding: 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .blog-hero { padding: 100px 24px 60px; }
+  .categories { padding: 32px 24px 24px; }
+  .posts-section { padding: 60px 24px 80px; }
+  .posts-grid { grid-template-columns: 1fr; gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo"><span class="logo-dot"></span>LOOP</a>
+  <a href="../index.html" class="nav-back">← Ana Sayfa</a>
+</nav>
+
+<section class="blog-hero">
+  <h1>LOOP BLOG</h1>
+  <p>Dijital büyüme için içgörüler, rehberler ve başarı hikayeleri</p>
+</section>
+
+<section class="categories">
+  <div class="categories-inner">
+    <a href="#" class="category-tag active">Tümü</a>
+    <a href="#" class="category-tag">E-ticaret</a>
+    <a href="#" class="category-tag">Profesyoneller</a>
+    <a href="#" class="category-tag">SEO</a>
+    <a href="#" class="category-tag">Meta Reklamları</a>
+  </div>
+</section>
+
+<section class="posts-section">
+  <div class="posts-grid">
+    
+    <!-- POST 1 -->
+    <a href="shopify-baslangic-rehberi.html" class="post-card">
+      <div class="post-image">
+        <span class="post-category">E-ticaret</span>
+      </div>
+      <div class="post-content">
+        <div class="post-meta">
+          <span>24 Şubat 2026</span>
+          <span>•</span>
+          <span>8 dk okuma</span>
+        </div>
+        <h2 class="post-title">Shopify'a Başlarken Bilinmesi Gerekenler: 2026 Rehberi</h2>
+        <p class="post-excerpt">E-ticaret mağazanızı Shopify ile kurarken dikkat etmeniz gereken 10 kritik nokta ve ilk satışa kadar tüm adımlar.</p>
+        <span class="read-more">Devamını Oku →</span>
+      </div>
+    </a>
+
+    <!-- POST 2 -->
+    <a href="profesyoneller-web-sitesi.html" class="post-card">
+      <div class="post-image">
+        <span class="post-category">Profesyoneller</span>
+      </div>
+      <div class="post-content">
+        <div class="post-meta">
+          <span>23 Şubat 2026</span>
+          <span>•</span>
+          <span>6 dk okuma</span>
+        </div>
+        <h2 class="post-title">Profesyoneller İçin Web Sitesi Neden Şart?</h2>
+        <p class="post-excerpt">Psikolog, doktor ve avukatlar için web sitesinin hasta/müvekkil kazanımındaki kritik rolü ve başarı metrikleri.</p>
+        <span class="read-more">Devamını Oku →</span>
+      </div>
+    </a>
+
+    <!-- POST 3 -->
+    <a href="meta-reklamlari-1000-tl.html" class="post-card">
+      <div class="post-image">
+        <span class="post-category">Meta Reklamları</span>
+      </div>
+      <div class="post-content">
+        <div class="post-meta">
+          <span>22 Şubat 2026</span>
+          <span>•</span>
+          <span>10 dk okuma</span>
+        </div>
+        <h2 class="post-title">Meta Reklamlarında İlk 1000 TL ile Ne Yapmalı?</h2>
+        <p class="post-excerpt">Sınırlı bütçe ile maksimum ROAS elde etmek için hedefleme, kreatif ve bidding stratejileri.</p>
+        <span class="read-more">Devamını Oku →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 LOOP Agency. Tüm haklar saklıdır.</p>
+</footer>
+
+</body>
+</html>
