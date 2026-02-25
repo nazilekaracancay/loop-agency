@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meta Reklamlarında İlk 1000 TL ile Ne Yapmalı? — LOOP Blog</title>
+<meta name="description" content="Sınırlı bütçe ile Meta reklamlarında maksimum ROAS. Hedefleme, kreatif ve bidding stratejileri. İlk kampanyanızı doğru kurun.">
+<meta name="keywords" content="meta reklamları, facebook reklamları, instagram reklamları, düşük bütçe reklam, roas artırma">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIzLjUiIGZpbGw9IiNjOGZmMDAiLz4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGZmMDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBhdGggZD0iTTE0IDcgTDE0IDIzIEwyNiAyMyIgc3Ryb2tlPSIjZjBlY2U0IiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #0a0a0a; --bg-surface: #111; --bg-card: #161616; --text-primary: #f0ece4; --text-secondary: #7a756a; --text-muted: #4a4540; --accent: #c8ff00; --accent-dim: rgba(200,255,0,0.12); --border: rgba(255,255,255,0.06); --font-display: 'Bebas Neue', sans-serif; --font-serif: 'IBM Plex Serif', serif; --font-body: 'DM Sans', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font-body); line-height: 1.6; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 48px; background: rgba(10,10,10,0.8); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: var(--font-display); font-size: 28px; letter-spacing: 6px; color: var(--text-primary); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.logo-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+.nav-back { color: var(--text-secondary); text-decoration: none; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; transition: color .3s; }
+.nav-back:hover { color: var(--accent); }
+article { max-width: 720px; margin: 120px auto 80px; padding: 0 24px; }
+.article-category { display: inline-block; background: var(--accent); color: #0a0a0a; padding: 6px 14px; border-radius: 20px; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; margin-bottom: 24px; }
+.article-title { font-family: var(--font-serif); font-size: clamp(32px, 5vw, 48px); font-weight: 600; line-height: 1.2; margin-bottom: 24px; }
+.article-meta { display: flex; gap: 16px; font-size: 13px; color: var(--text-muted); margin-bottom: 48px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+.article-content { font-family: var(--font-serif); font-size: 18px; line-height: 1.8; color: var(--text-secondary); }
+.article-content h2 { font-family: var(--font-display); font-size: 32px; letter-spacing: 2px; color: var(--text-primary); margin: 48px 0 24px; }
+.article-content h3 { font-family: var(--font-serif); font-size: 24px; font-weight: 600; color: var(--text-primary); margin: 36px 0 16px; }
+.article-content p { margin-bottom: 24px; }
+.article-content ul, .article-content ol { margin: 24px 0; padding-left: 24px; }
+.article-content li { margin-bottom: 12px; }
+.article-content strong { color: var(--text-primary); font-weight: 600; }
+.article-content em { color: var(--accent); font-style: italic; }
+.article-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); transition: opacity .3s; }
+.article-content a:hover { opacity: 0.7; }
+.highlight-box { background: var(--bg-card); border-left: 3px solid var(--accent); padding: 24px; margin: 32px 0; border-radius: 4px; }
+.highlight-box p { margin: 0; font-size: 16px; }
+.warning-box { background: rgba(255,100,100,0.1); border-left: 3px solid #ff6464; padding: 24px; margin: 32px 0; border-radius: 4px; }
+.warning-box p { margin: 0; font-size: 16px; color: #ff9999; }
+.budget-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-family: var(--font-body); font-size: 14px; }
+.budget-table th { background: var(--bg-card); padding: 12px; text-align: left; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); }
+.budget-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+.article-cta { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 48px; text-align: center; margin: 64px 0; }
+.article-cta h3 { font-family: var(--font-display); font-size: 32px; letter-spacing: 2px; margin-bottom: 16px; }
+.article-cta p { color: var(--text-secondary); margin-bottom: 24px; font-family: var(--font-body); font-size: 16px; }
+.cta-btn { display: inline-block; background: var(--accent); color: #0a0a0a; padding: 14px 32px; border-radius: 4px; font-size: 13px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: opacity .3s; }
+.cta-btn:hover { opacity: 0.85; }
+footer { padding: 48px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 12px; }
+@media(max-width: 768px) { nav { padding: 16px 24px; } article { margin: 100px auto 60px; } .article-cta { padding: 32px 24px; } .budget-table { font-size: 12px; } .budget-table th, .budget-table td { padding: 8px; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo"><span class="logo-dot"></span>LOOP</a>
+  <a href="index.html" class="nav-back">← Blog</a>
+</nav>
+
+<article>
+  <span class="article-category">Meta Reklamları</span>
+  <h1 class="article-title">Meta Reklamlarında İlk 1000 TL ile Ne Yapmalı?</h1>
+  <div class="article-meta">
+    <span>22 Şubat 2026</span>
+    <span>•</span>
+    <span>10 dakika okuma</span>
+  </div>
+
+  <div class="article-content">
+    <p>Meta reklamlarına (Facebook & Instagram) yeni başlıyorsanız ve sınırlı bir bütçeniz varsa, <em>her kuruş sayar</em>. 1000 TL'lik ilk bütçenizi nasıl kullanırsanız, kampanyanızın başarısı buna bağlı.</p>
+
+    <p>Bu rehberde, 1000 TL'lik bütçe ile Meta reklamlarında maksimum verim almanın yollarını anlatacağız.</p>
+
+    <h2>İLK SORU: 1000 TL YETER Mİ?</h2>
+
+    <p>Kısa cevap: <strong>Test için evet, ölçekleme için hayır.</strong></p>
+
+    <p>1000 TL ile yapabilecekleriniz:</p>
+    <ul>
+      <li>Hedef kitle testleri (kimler dönüşüm yapıyor?)</li>
+      <li>Kreatif testleri (hangi görsel/video çalışıyor?)</li>
+      <li>Mesaj testleri (hangi copy etkili?)</li>
+      <li>İlk 5-15 satış/lead</li>
+    </ul>
+
+    <p>1000 TL ile yapaMAyacaklarınız:</p>
+    <ul>
+      <li>Büyük ölçekte satış</li>
+      <li>Marka bilinirliği kampanyası</li>
+      <li>Geniş hedef kitleye ulaşma</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Hedef:</strong> İlk 1000 TL'de amaç <em>öğrenmek</em> ve <em>kazanan kombinasyonları bulmak</em>tır. Sonrasında ölçeklersiniz.</p>
+    </div>
+
+    <h2>BÜTÇE DAĞILIMI: 7 GÜNLÜK PLAN</h2>
+
+    <p>1000 TL'yi nasıl harcamalısınız?</p>
+
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Gün</th>
+          <th>Günlük Bütçe</th>
+          <th>Strateji</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1-3</td>
+          <td>150 TL/gün</td>
+          <td>Test kampanyası (3 farklı hedef kitle)</td>
+        </tr>
+        <tr>
+          <td>4-5</td>
+          <td>100 TL/gün</td>
+          <td>Kazanan hedef kitle + kreatif optimizasyon</td>
+        </tr>
+        <tr>
+          <td>6-7</td>
+          <td>125 TL/gün</td>
+          <td>Ölçekleme (kazanan combo'yu push et)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><strong>Toplam:</strong> 1000 TL / 7 gün</p>
+
+    <h2>1. HEDEF KİTLE STRATEJİSİ</h2>
+
+    <p>Sınırlı bütçe ile geniş hedef kitlelere reklam vermek, <em>para yakmak</em> demektir.</p>
+
+    <h3>YANLIŞ Yaklaşım:</h3>
+    <ul>
+      <li>18-65 yaş, Türkiye</li>
+      <li>İlgi alanı: E-ticaret (10M+ kişi)</li>
+      <li>Sonuç: Bütçe dağılır, dönüşüm olmaz</li>
+    </ul>
+
+    <h3>DOĞRU Yaklaşım:</h3>
+    <ul>
+      <li>25-45 yaş, İstanbul + Ankara + İzmir</li>
+      <li>İlgi alanı: Spesifik (örn: "Shopify" ilgisi olanlar)</li>
+      <li>Davranış: Online alışveriş yapanlar</li>
+      <li>Hedef kitle boyutu: 100K-500K</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Kural:</strong> Dar hedef kitle = Yüksek relevanslık = Düşük maliyet = Daha fazla dönüşüm</p>
+    </div>
+
+    <h3>3 Test Hedef Kitlesi (İlk 3 Gün)</h3>
+
+    <p><strong>Hedef Kitle 1: Lookalike (Benzer Kitle)</strong></p>
+    <ul>
+      <li>Mevcut müşterilerinizin %1 lookalike'ı</li>
+      <li>En yüksek conversion potansiyeli</li>
+    </ul>
+
+    <p><strong>Hedef Kitle 2: İlgi Alanı Bazlı</strong></p>
+    <ul>
+      <li>Rakip marka ilgileri (e-ticaret için: Trendyol, Hepsiburada)</li>
+      <li>Kategori ilgileri (Moda, Elektronik vb.)</li>
+    </ul>
+
+    <p><strong>Hedef Kitle 3: Davranış Bazlı</strong></p>
+    <ul>
+      <li>Son 30 günde online alışveriş yapanlar</li>
+      <li>Mobil cihazdan aktif alanlar</li>
+    </ul>
+
+    <p>Her birine 150 TL harcayıp hangisi daha iyi performans gösteriyor test edin.</p>
+
+    <h2>2. KREATİF STRATEJİSİ</h2>
+
+    <p>Meta reklamlarında kreatif, %70'i belirler. Bütçeniz sınırlıysa, kreatifiniz mükemmel olmalı.</p>
+
+    <h3>Kazanan Kreatif Formatları (2026)</h3>
+
+    <p><strong>1. Video Reklamlar (En yüksek ROAS)</strong></p>
+    <ul>
+      <li>15-30 saniye kısa videolar</li>
+      <li>İlk 3 saniye hook çok önemli</li>
+      <li>Subtitle ekleyin (sessiz izlenme %85)</li>
+      <li>CTA açık ve net olsun</li>
+    </ul>
+
+    <p><strong>2. Carousel (Ürün kataloğu için)</strong></p>
+    <ul>
+      <li>5-7 kart ideal</li>
+      <li>Her kart farklı ürün</li>
+      <li>Her kart kendi CTA'sı</li>
+    </ul>
+
+    <p><strong>3. Statik Görsel (Basit ama etkili)</strong></p>
+    <ul>
+      <li>Bold yazı, minimal tasarım</li>
+      <li>Ürün + fiyat + fayda açık</li>
+      <li>CTA button belirgin</li>
+    </ul>
+
+    <div class="warning-box">
+      <p><strong>SAKININ:</strong> Stock fotoğraf kullanmayın. Jenerik görseller CTR'yi düşürür, maliyeti artırır.</p>
+    </div>
+
+    <h2>3. COPY (METİN) STRATEJİSİ</h2>
+
+    <p>Reklam metniniz, duygusal tetikleyici + fayda + CTA içermeli.</p>
+
+    <h3>Kazanan Copy Formülü:</h3>
+
+    <p><strong>1. Hook (Dikkat çekici başlangıç)</strong></p>
+    <ul>
+      <li>"Shopify mağazanız neden satış yapmıyor?"</li>
+      <li>"İlk 10 satışı almak bu kadar zor değil."</li>
+      <li>"3 adımda e-ticaret mağazanızı kurabilirsiniz."</li>
+    </ul>
+
+    <p><strong>2. Problem-Solution</strong></p>
+    <ul>
+      <li>Problem: "Mağaza kurdunuz ama satış yok."</li>
+      <li>Solution: "Çünkü doğru reklam stratejisi yok."</li>
+    </ul>
+
+    <p><strong>3. Sosyal Kanıt</strong></p>
+    <ul>
+      <li>"50+ e-ticaret işletmesi bize güveniyor."</li>
+      <li>"Ortalama 3.2x ROAS sağlıyoruz."</li>
+    </ul>
+
+    <p><strong>4. Net CTA</strong></p>
+    <ul>
+      <li>"Ücretsiz danışma için linke tıklayın."</li>
+      <li>"Hemen başlayın."</li>
+    </ul>
+
+    <h2>4. BİDDİNG STRATEJİSİ</h2>
+
+    <p>Sınırlı bütçe ile bidding stratejiniz çok önemli.</p>
+
+    <p><strong>İlk 3 Gün: Lowest Cost (En Düşük Maliyet)</strong></p>
+    <ul>
+      <li>Meta'nın algoritması öğrenir</li>
+      <li>Farklı kitlelerle test eder</li>
+      <li>Maliyet optimize edilir</li>
+    </ul>
+
+    <p><strong>4-7. Gün: Cost Cap (Maliyet Üst Limiti)</strong></p>
+    <ul>
+      <li>Öğrenme fazı bittikten sonra</li>
+      <li>CPA (Cost Per Acquisition) limitini belirleyin</li>
+      <li>Örnek: Conversion başına max 80 TL</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Önemli:</strong> İlk 3 gün bidding stratejisini DEĞİŞTİRMEYİN. Meta'nın algoritması öğrenme fazındadır.</p>
+    </div>
+
+    <h2>5. PLACEMENT (YERLEŞIM) OPTİMİZASYONU</h2>
+
+    <p>Tüm placement'lara reklam vermeyin. Bütçeniz dağılır.</p>
+
+    <p><strong>Önerilen Placement'lar (1000 TL bütçe için):</strong></p>
+    <ul>
+      <li>✅ Instagram Feed</li>
+      <li>✅ Instagram Stories</li>
+      <li>✅ Facebook Feed</li>
+      <li>❌ Facebook Right Column (düşük performance)</li>
+      <li>❌ Audience Network (dağınık)</li>
+      <li>❌ Messenger (e-ticaret için zayıf)</li>
+    </ul>
+
+    <h2>6. ZAMANLAMA STRATEJİSİ</h2>
+
+    <p>Reklamlarınızı 7/24 göstermeyin. En etkili saatleri belirleyin.</p>
+
+    <p><strong>E-ticaret İçin En İyi Saatler (Türkiye):</strong></p>
+    <ul>
+      <li>Hafta içi: 12:00-14:00 (öğle arası), 20:00-23:00 (akşam)</li>
+      <li>Hafta sonu: 11:00-15:00, 18:00-22:00</li>
+    </ul>
+
+    <p>Ad scheduling kullanarak sadece bu saatlerde reklam gösterin. Bütçe tasarrufu: %20-30.</p>
+
+    <h2>7. RETARGETING UNUTMAYIN</h2>
+
+    <p>1000 TL'nin 200-300 TL'sini retargeting'e ayırın.</p>
+
+    <p><strong>Retargeting Stratejisi:</strong></p>
+    <ul>
+      <li>Web sitenizi ziyaret edip sepete ekleyip almayan: %70 bütçe</li>
+      <li>Ürün sayfasını görüp sepete eklemeyenler: %30 bütçe</li>
+    </ul>
+
+    <p>Retargeting ROAS'ı genelde 3-5x'tir. Yani yeni müşteri edinmekten çok daha karlı.</p>
+
+    <h2>8. METRİK TAKİBİ</h2>
+
+    <p>Hangi metriklere bakmalısınız?</p>
+
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Metrik</th>
+          <th>İyi</th>
+          <th>Orta</th>
+          <th>Kötü</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CTR (Click-Through Rate)</td>
+          <td>>2%</td>
+          <td>1-2%</td>
+          <td><1%</td>
+        </tr>
+        <tr>
+          <td>CPC (Cost Per Click)</td>
+          <td><2 TL</td>
+          <td>2-4 TL</td>
+          <td>>4 TL</td>
+        </tr>
+        <tr>
+          <td>Conversion Rate</td>
+          <td>>3%</td>
+          <td>1.5-3%</td>
+          <td><1.5%</td>
+        </tr>
+        <tr>
+          <td>ROAS</td>
+          <td>>3x</td>
+          <td>2-3x</td>
+          <td><2x</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Günlük bu metrikleri kontrol edin. Kötü performans gösteren ad set'leri kapatın, iyi olanları ölçeklendirin.</p>
+
+    <h2>GERÇEK ÖRNEK: 1000 TL BÜTÇE İLE 7 GÜNLÜK KAMPANYA</h2>
+
+    <p><strong>İşletme:</strong> Organik kozmetik e-ticaret</p>
+    <p><strong>Bütçe:</strong> 1000 TL / 7 gün</p>
+
+    <p><strong>Sonuçlar:</strong></p>
+    <ul>
+      <li>Reach: 28,450 kişi</li>
+      <li>Click: 1,240 (CTR: 2.3%)</li>
+      <li>Satış: 18 adet</li>
+      <li>Toplam gelir: 3,600 TL</li>
+      <li><strong>ROAS: 3.6x</strong></li>
+    </ul>
+
+    <p><strong>Kazanan Kombinasyon:</strong></p>
+    <ul>
+      <li>Hedef: 25-40 yaş kadın, İstanbul + İzmir, organik kozmetik ilgisi</li>
+      <li>Kreatif: 20 saniyelik kullanım videosu</li>
+      <li>Placement: Instagram Feed + Stories</li>
+      <li>Zaman: Hafta içi 20:00-23:00</li>
+    </ul>
+
+    <h2>SON TAVSİYELER</h2>
+
+    <p><strong>1. Sabırlı Olun</strong></p>
+    <p>İlk 2-3 gün sonuç vermeyebilir. Meta öğreniyor. Panik yapıp kampanyayı kapatmayın.</p>
+
+    <p><strong>2. A/B Test Yapın</strong></p>
+    <p>Her zaman 2-3 varyasyon test edin. Kazananı bulduktan sonra ölçeklendirin.</p>
+
+    <p><strong>3. Pixel Kurun</strong></p>
+    <p>Meta Pixel olmadan reklam yapmak, kör araba kullanmak gibidir. Mutlaka kurun.</p>
+
+    <p><strong>4. Ölçekleme İçin Hazır Olun</strong></p>
+    <p>1000 TL'de kazanan kombinasyonu bulursanız, 3000-5000 TL ile ölçeklendirin. ROAS düşmez, artar.</p>
+
+    <h2>SONUÇ</h2>
+
+    <p>1000 TL sınırlı bir bütçe gibi görünse de, <em>doğru strateji ile</em> 3-4x ROAS elde etmek mümkün. Anahtar, test etmek, öğrenmek ve kazanan kombinasyonları ölçeklendirmek.</p>
+
+    <p>Unutmayın: İlk kampanyanız mükemmel olmayacak. Ama her kampanya, bir sonrakini daha iyi yapmak için veri sağlar.</p>
+  </div>
+
+  <div class="article-cta">
+    <h3>META REKLAM KAMPANYANIZI PROFESYONELLERİMİZ YÖNETSİN</h3>
+    <p>Loop Agency olarak aylık Meta reklam yönetimi ile sürekli optimize edilen kampanyalar sunuyoruz.</p>
+    <a href="../index.html#contact" class="cta-btn">Teklif Al</a>
+  </div>
+</article>
+
+<footer>
+  <p>© 2026 LOOP Agency. Tüm haklar saklıdır.</p>
+</footer>
+
+</body>
+</html>
