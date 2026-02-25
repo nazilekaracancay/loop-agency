@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopify'a Başlarken Bilinmesi Gerekenler: 2026 Rehberi — LOOP Blog</title>
+<meta name="description" content="E-ticaret mağazanızı Shopify ile kurarken dikkat etmeniz gereken 10 kritik nokta. Tema seçiminden ödeme sistemlerine, SEO'dan pazarlamaya tüm adımlar.">
+<meta name="keywords" content="shopify rehberi, shopify türkiye, e-ticaret kurulumu, shopify başlangıç, online mağaza">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CiAgPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNyIgZmlsbD0iIzBhMGEwYSIvPgogIDxjaXJjbGUgY3g9IjgiIGN5PSI4IiByPSIzLjUiIGZpbGw9IiNjOGZmMDAiLz4KICA8Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iNS41IiBmaWxsPSJub25lIiBzdHJva2U9IiNjOGZmMDAiIHN0cm9rZS13aWR0aD0iMSIgb3BhY2l0eT0iMC4zIi8+CiAgPHBhdGggZD0iTTE0IDcgTDE0IDIzIEwyNiAyMyIgc3Ryb2tlPSIjZjBlY2U0IiBzdHJva2Utd2lkdGg9IjMuMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg-surface: #111;
+  --bg-card: #161616;
+  --text-primary: #f0ece4;
+  --text-secondary: #7a756a;
+  --text-muted: #4a4540;
+  --accent: #c8ff00;
+  --accent-dim: rgba(200,255,0,0.12);
+  --border: rgba(255,255,255,0.06);
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-serif: 'IBM Plex Serif', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.nav-back {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color .3s;
+}
+
+.nav-back:hover {
+  color: var(--accent);
+}
+
+/* ARTICLE */
+article {
+  max-width: 720px;
+  margin: 120px auto 80px;
+  padding: 0 24px;
+}
+
+.article-category {
+  display: inline-block;
+  background: var(--accent);
+  color: #0a0a0a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.article-title {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.article-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.article-content {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.article-content h2 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: var(--text-primary);
+  margin: 48px 0 24px;
+}
+
+.article-content h3 {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 36px 0 16px;
+}
+
+.article-content p {
+  margin-bottom: 24px;
+}
+
+.article-content ul,
+.article-content ol {
+  margin: 24px 0;
+  padding-left: 24px;
+}
+
+.article-content li {
+  margin-bottom: 12px;
+}
+
+.article-content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.article-content em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.article-content a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: opacity .3s;
+}
+
+.article-content a:hover {
+  opacity: 0.7;
+}
+
+.highlight-box {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 24px;
+  margin: 32px 0;
+  border-radius: 4px;
+}
+
+.highlight-box p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* CTA */
+.article-cta {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 48px;
+  text-align: center;
+  margin: 64px 0;
+}
+
+.article-cta h3 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.article-cta p {
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  font-family: var(--font-body);
+  font-size: 16px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #0a0a0a;
+  padding: 14px 32px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+
+.cta-btn:hover {
+  opacity: 0.85;
+}
+
+/* FOOTER */
+footer {
+  padding: 48px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+@media(max-width: 768px) {
+  nav { padding: 16px 24px; }
+  article { margin: 100px auto 60px; }
+  .article-cta { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="../index.html" class="logo"><span class="logo-dot"></span>LOOP</a>
+  <a href="index.html" class="nav-back">← Blog</a>
+</nav>
+
+<article>
+  <span class="article-category">E-ticaret</span>
+  <h1 class="article-title">Shopify'a Başlarken Bilinmesi Gerekenler: 2026 Rehberi</h1>
+  <div class="article-meta">
+    <span>24 Şubat 2026</span>
+    <span>•</span>
+    <span>8 dakika okuma</span>
+  </div>
+
+  <div class="article-content">
+    <p>E-ticaret dünyasına adım atmak heyecan verici ama aynı zamanda kafa karıştırıcı olabilir. <em>Shopify</em>, bu süreci olabildiğince basit hale getirmek için tasarlanmış olsa da, başarılı bir mağaza kurmak için bilmeniz gereken kritik noktalar var.</p>
+
+    <p>Bu rehberde, 2026 yılında Shopify ile e-ticaret mağazanızı kurarken dikkat etmeniz gereken 10 temel konuyu ele alacağız.</p>
+
+    <h2>1. DOĞRU PLANI SEÇİN</h2>
+
+    <p>Shopify'ın 2026'daki plan yapısı şöyle:</p>
+
+    <ul>
+      <li><strong>Basic ($39/ay):</strong> Yeni başlayanlar için. Sınırsız ürün, 2 personel hesabı, temel raporlama.</li>
+      <li><strong>Shopify ($105/ay):</strong> Büyüyen işletmeler için. 5 personel hesabı, profesyonel raporlar.</li>
+      <li><strong>Advanced ($399/ay):</strong> Yüksek hacimli satışlar için. 15 personel hesabı, gelişmiş raporlama.</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Loop Tavsiyesi:</strong> İlk 6 ay Basic plan ile başlayın. Aylık 100+ sipariş aldıktan sonra Shopify planına yükseltin.</p>
+    </div>
+
+    <h2>2. TEMA SEÇİMİ: ÜCRETLİ Mİ, ÜCRETSİZ Mİ?</h2>
+
+    <p>Shopify'da 100'den fazla tema var. Ücretsiz temalar $0, ücretli temalar $150-$350 arası.</p>
+
+    <p><strong>Ücretsiz Temalar:</strong></p>
+    <ul>
+      <li>Dawn (2024 varsayılan, hızlı ve minimal)</li>
+      <li>Sense (Modern ve temiz)</li>
+      <li>Craft (El yapımı ürünler için)</li>
+    </ul>
+
+    <p><strong>Ücretli Temalar:</strong></p>
+    <ul>
+      <li>Prestige ($350) - Lüks markalar</li>
+      <li>Impulse ($320) - Yüksek conversion</li>
+      <li>Empire ($300) - Büyük kataloglar</li>
+    </ul>
+
+    <p>İlk başlangıçta Dawn teması mükemmel bir seçim. Hızlı, SEO-optimize ve mobil uyumlu.</p>
+
+    <h2>3. ÖDEME SİSTEMLERİ</h2>
+
+    <p>Türkiye'de kullanabileceğiniz ödeme gateway'leri:</p>
+
+    <ul>
+      <li><strong>iyzico:</strong> En popüler, %2.5-3.5 komisyon</li>
+      <li><strong>PayTR:</strong> Alternatif, benzer komisyonlar</li>
+      <li><strong>Shopify Payments:</strong> Türkiye'de henüz aktif değil</li>
+    </ul>
+
+    <h3>Komisyon Hesabı</h3>
+
+    <p>100 TL'lik satışta:</p>
+    <ul>
+      <li>iyzico komisyon: ~3 TL</li>
+      <li>Banka transfer ücreti: ~1.5 TL</li>
+      <li>Net kazanç: ~95.5 TL</li>
+    </ul>
+
+    <h2>4. KARGO ENTEGRASYONU</h2>
+
+    <p>Shopify Türkiye için kargo entegrasyonları:</p>
+
+    <ul>
+      <li><strong>Yurtiçi Kargo:</strong> API entegrasyonu mevcut</li>
+      <li><strong>MNG Kargo:</strong> Shopify uygulaması var</li>
+      <li><strong>Aras Kargo:</strong> Üçüncü parti uygulamalar</li>
+    </ul>
+
+    <p>İlk 6 ay manuel kargo işlemleriyle başlayabilirsiniz. Günde 10+ sipariş aldığınızda otomasyona geçin.</p>
+
+    <h2>5. SEO OPTİMİZASYONU</h2>
+
+    <p>Shopify varsayılan olarak SEO-friendly ama şunları yapmalısınız:</p>
+
+    <ul>
+      <li>Her ürün için benzersiz meta descriptions yazın</li>
+      <li>Alt text'leri ekleyin (görsel SEO)</li>
+      <li>URL'leri düzenleyin (ürün-adı yerine urun-adi-ozellik)</li>
+      <li>Blog başlatın (en az haftada 1 yazı)</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Kritik:</strong> Google Search Console'u ilk günden kurun. İlk 3 ay boyunca performansınızı takip edin.</p>
+    </div>
+
+    <h2>6. ÜRÜN FOTOĞRAFLARI</h2>
+
+    <p>Conversion rate'i doğrudan etkileyen en önemli faktör.</p>
+
+    <p><strong>Minimum standartlar:</strong></p>
+    <ul>
+      <li>Her ürün için en az 5 fotoğraf</li>
+      <li>Beyaz arka plan + lifestyle görseller</li>
+      <li>1200x1200 px minimum çözünürlük</li>
+      <li>WebP formatı (hız için)</li>
+    </ul>
+
+    <p>Profesyonel ürün çekimi bütçeniz yoksa smartphone + doğal ışık + beyaz kağıt fon yeterli başlangıç.</p>
+
+    <h2>7. İLK SATIŞ STRATEJİSİ</h2>
+
+    <p>Mağazanız yayına çıktıktan sonraki ilk 30 gün kritik.</p>
+
+    <p><strong>Gün 1-7: Test Satışları</strong></p>
+    <ul>
+      <li>Arkadaş/aile siparişleri (süreç testi)</li>
+      <li>Ödeme akışını kontrol et</li>
+      <li>Email bildirimlerini test et</li>
+    </ul>
+
+    <p><strong>Gün 8-30: İlk Reklam Kampanyası</strong></p>
+    <ul>
+      <li>Meta Ads ile başlayın (günlük 150-200 TL)</li>
+      <li>En iyi satan 3 ürününüzü tanıtın</li>
+      <li>Hedef: İlk 10 gerçek satış</li>
+    </ul>
+
+    <h2>8. YASAL UYUMLULUK</h2>
+
+    <p>Türkiye'de e-ticaret için zorunlu:</p>
+
+    <ul>
+      <li><strong>KVKK Metni:</strong> Gizlilik politikası</li>
+      <li><strong>Mesafeli Satış Sözleşmesi</strong></li>
+      <li><strong>İptal/İade Koşulları</strong></li>
+      <li><strong>Ticari Elektronik İleti İzni</strong></li>
+    </ul>
+
+    <p>Bu metinleri hazır şablon kullanarak oluşturabilirsiniz. Loop Agency'de tüm bu metinleri ücretsiz sağlıyoruz.</p>
+
+    <h2>9. EMAIL MARKETING</h2>
+
+    <p>Shopify entegre email araçları:</p>
+
+    <ul>
+      <li><strong>Shopify Email (Ücretsiz):</strong> Ayda 10,000 email</li>
+      <li><strong>Klaviyo:</strong> Gelişmiş segmentasyon</li>
+      <li><strong>Mailchimp:</strong> Klasik seçenek</li>
+    </ul>
+
+    <p>İlk 3 ay Shopify Email ile başlayın. Otomatik email akışları:</p>
+    <ul>
+      <li>Hoş geldin serisi (3 email)</li>
+      <li>Terk edilmiş sepet (2 email, 1 saat + 24 saat sonra)</li>
+      <li>Satış sonrası teşekkür + cross-sell</li>
+    </ul>
+
+    <h2>10. PERFORMANS TAKİBİ</h2>
+
+    <p>İzlemeniz gereken metrikler:</p>
+
+    <ul>
+      <li><strong>Conversion Rate:</strong> Hedef %1.5-3%</li>
+      <li><strong>AOV (Ortalama Sipariş Değeri):</strong> Sektöre göre değişir</li>
+      <li><strong>ROAS (Return on Ad Spend):</strong> Minimum 2x, hedef 3-4x</li>
+      <li><strong>Customer Acquisition Cost (CAC):</strong> AOV'nin %30'undan az olmalı</li>
+    </ul>
+
+    <div class="highlight-box">
+      <p><strong>Örnek:</strong> AOV 500 TL ise, müşteri başına edinim maliyeti 150 TL'yi geçmemeli.</p>
+    </div>
+
+    <h2>SONUÇ</h2>
+
+    <p>Shopify ile başarılı bir e-ticaret mağazası kurmak, doğru planlamayla mümkün. İlk 3 ay sabır, test ve öğrenme dönemidir. İlk satışınızdan sonra her şey daha kolay hale gelir.</p>
+
+    <p>Unutmayın: <strong>Mükemmel mağaza yoktur, sürekli gelişen mağaza vardır.</strong> Haftada bir değişiklik yapın, test edin, öğrenin.</p>
+  </div>
+
+  <div class="article-cta">
+    <h3>SHOPIFY MAĞAZANIZI KURMAK İSTER MİSİNİZ?</h3>
+    <p>Loop Agency olarak 10-14 iş günü içinde satışa hazır mağazanızı kuruyoruz.</p>
+    <a href="../index.html#contact" class="cta-btn">Ücretsiz Danışma Al</a>
+  </div>
+</article>
+
+<footer>
+  <p>© 2026 LOOP Agency. Tüm haklar saklıdır.</p>
+</footer>
+
+</body>
+</html>
