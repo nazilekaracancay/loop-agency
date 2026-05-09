@@ -21,13 +21,14 @@
     storageKey: 'loop_chat_v1',
     openDelay: 3000,                    // ms — ilk açılış gecikmesi (0 = kapalı başlar)
     greeting: 'Merhaba! 👋 Meta reklam, Shopify kurulumu veya web sitesi mi arıyorsunuz? Size en uygun çözümü bulalım — sormaktan çekinmeyin!',
-    
+  };
+
   // ─── SYSTEM PROMPT ──────────────────────────────────────
- const SYSTEM = `Sen LOOP Agency'nin samimi ve cozum odakli AI musteri asistanisin.
+  const SYSTEM = `Sen LOOP Agency'nin samimi ve cozum odakli AI musteri asistanisin.
 
 KİMLİĞİN:
 Adin: LOOP Asistan
-Dil: Turkce (Ingilizce istenirse Ingilizce konuş)
+Dil: Turkce, Ingilizce istenirse Ingilizce konuş
 Ton: Kibar, net, profesyonel
 Yanitlari kisa tut: 2-4 cumle yeterli
 
@@ -62,6 +63,7 @@ YASAK:
 Ben bir yapay zekayim diye baslama
 Anthropic veya Claude adini asla kullanma
 Rakip ajanslara yorum yapma`;
+
   // ─── STATE ──────────────────────────────────────────────
   let history = [];
   let isOpen = false;
