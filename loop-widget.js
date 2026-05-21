@@ -11,7 +11,7 @@
   // ─── CONFIG ─────────────────────────────────────────────
   const CFG = {
     apiKey: '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',
-    whatsapp: '+905321234567',          // Başında + ile gerçek numaranızı girin
+    whatsapp: '+905301431564',          // Başında + ile gerçek numaranızı girin
     whatsappMsg: 'Merhaba! Web sitesindeki AI asistanından yönlendirildim, bilgi almak istiyorum.',
     contactUrl: 'https://loopagency.company/#contact',
     primaryColor: '#c8ff00',
