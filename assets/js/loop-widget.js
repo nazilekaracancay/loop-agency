@@ -1,7 +1,7 @@
 /**
  * LOOP Agency — AI Müşteri Asistanı Widget
  * GitHub Pages'de çalışan, loopagency.company sitesine gömülü versiyon
- * Kullanım: <script src="loop-widget.js" data-key="YOUR_KEY"></script>
+ * Kullanım: <script src="assets/js/loop-widget.js"></script>
  */
 
 (function () {
@@ -9,8 +9,6 @@
 
   // ─── CONFIG ─────────────────────────────────────────────
   const CFG = {
-    // API anahtarını buraya girin VEYA script tag'ına data-key="sk-ant-..." ekleyin
-    apiKey: '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',
     whatsapp: '+905301431564',          // Başında + ile gerçek numaranızı girin
     whatsappMsg: 'Merhaba! Web sitesindeki AI asistanından yönlendirildim, bilgi almak istiyorum.',
     contactUrl: 'https://loopagency.company/#contact',
@@ -431,7 +429,7 @@ YASAK:
 
   // ─── SEND MESSAGE ────────────────────────────────────────
   async function send() {
-    if (isTyping || !CFG.apiKey) return;
+    if (isTyping) return;
     const inputEl = document.getElementById('loop-input');
     const sendBtn = document.getElementById('loop-send');
     const text = inputEl.value.trim();
@@ -533,11 +531,6 @@ YASAK:
     });
 
     sendBtn.addEventListener('click', send);
-
-    // Check API key
-    if (!CFG.apiKey) {
-      console.warn('[LOOP Widget] API anahtarı bulunamadı. loop-widget.js script etiketine data-key="sk-ant-..." ekleyin veya window.LOOP_API_KEY tanımlayın.');
-    }
 
     // Restore history
     try {
