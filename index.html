@@ -127,16 +127,15 @@ nav.scrolled{padding:15px 52px}
 .references-header{display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:52px}
 .references-header h2{font-family:var(--font-display);font-size:clamp(46px,5.5vw,70px);line-height:.95;margin-top:18px}
 .references-header p{max-width:440px;color:var(--text-secondary);font-size:15px;line-height:1.75;font-weight:300}
-.case-study-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);min-height:440px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .35s,border-color .35s,box-shadow .35s}
+.case-study-card{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr);min-height:440px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .35s,border-color .35s,box-shadow .35s}
 .case-study-card:hover{transform:translateY(-5px);border-color:var(--border-hover);box-shadow:0 24px 70px rgba(0,0,0,.3)}
-.case-study-visual{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:46px;overflow:hidden;background:radial-gradient(circle at 18% 25%,rgba(216,196,175,.20),transparent 34%),linear-gradient(135deg,#191715 0%,#0b0b0b 62%,#12100e 100%)}
-.case-study-visual::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px}
-.case-study-visual::after{content:'✦';position:absolute;right:8%;bottom:-24%;font-family:serif;font-size:330px;line-height:1;color:rgba(216,196,175,.065);transform:rotate(12deg)}
-.case-study-label,.case-study-brand,.case-study-signature{position:relative;z-index:1}
-.case-study-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#d8c4af}
-.case-study-brand{font-family:Georgia,serif;font-size:clamp(45px,6vw,78px);font-weight:400;letter-spacing:1px;line-height:.94;color:#f4eee8}
-.case-study-brand span{display:block;margin-top:16px;font-family:var(--font-body);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#a99b8c}
-.case-study-signature{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#756b62}
+.case-study-visual{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:28px;overflow:hidden;background:#151210}
+.case-study-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .7s ease}
+.case-study-visual::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(5,5,5,.52) 0%,transparent 28%,transparent 62%,rgba(5,5,5,.62) 100%)}
+.case-study-card:hover .case-study-image{transform:scale(1.025)}
+.case-study-label,.case-study-signature{position:relative;z-index:2;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.case-study-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#fff}
+.case-study-signature{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff}
 .case-study-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
 .case-study-category{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 .case-study-content h3{font-family:var(--font-display);font-size:34px;letter-spacing:1.5px;line-height:1.05;margin-bottom:18px}
@@ -308,7 +307,7 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
   footer{padding:60px 24px 32px}.footer-inner{grid-template-columns:1fr 1fr;gap:36px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}
 }
 @media(max-width:600px){
-  .hero{padding:100px 20px 70px}.services,.proof,.references,.for-who,.process,.pricing,.faq,.contact{padding:64px 20px}.references-header{display:block;margin-bottom:34px}.references-header p{margin-top:20px}.case-study-card{grid-template-columns:1fr;min-height:0}.case-study-visual{min-height:340px;padding:32px 28px}.case-study-content{padding:36px 28px}.case-study-visual::after{font-size:240px}.cta-band{margin:32px 20px;padding:52px 20px}footer{padding:48px 20px 28px}.footer-inner{grid-template-columns:1fr}
+  .hero{padding:100px 20px 70px}.services,.proof,.references,.for-who,.process,.pricing,.faq,.contact{padding:64px 20px}.references-header{display:block;margin-bottom:34px}.references-header p{margin-top:20px}.case-study-card{grid-template-columns:1fr;min-height:0}.case-study-visual{min-height:340px;padding:32px 28px}.case-study-content{padding:36px 28px}.cta-band{margin:32px 20px;padding:52px 20px}footer{padding:48px 20px 28px}.footer-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -536,8 +535,8 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
     </div>
     <a class="case-study-card reveal" href="https://dvsdiamonds.com" target="_blank" rel="noopener noreferrer" aria-label="DVS Diamonds web sitesini ziyaret et">
       <div class="case-study-visual">
+        <img class="case-study-image" src="assets/dvs-reference.webp" alt="DVS Diamonds Shopify mağazasında tektaş ve tamtur yüzük koleksiyonları" width="1828" height="694" loading="lazy">
         <div class="case-study-label">Featured Project · Fine Jewelry</div>
-        <div class="case-study-brand">DVS<br>Diamonds<span>Gökyüzünün Mücevherleri</span></div>
         <div class="case-study-signature">Shopify Commerce Experience · 2026</div>
       </div>
       <div class="case-study-content">
