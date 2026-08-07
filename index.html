@@ -120,6 +120,33 @@ nav.scrolled{padding:15px 52px}
 .author-avatar{width:38px;height:38px;border-radius:50%;background:var(--accent-dim);border:1px solid var(--border-hover);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;color:var(--accent)}
 .author-name{font-size:13px;font-weight:500;color:var(--text-primary)}
 .author-title{font-size:11px;color:var(--text-muted);margin-top:2px}
+
+/* ── REFERANSLAR ── */
+.references{padding:140px 52px;background:var(--bg)}
+.references-inner{max-width:1200px;margin:0 auto}
+.references-header{display:flex;align-items:end;justify-content:space-between;gap:48px;margin-bottom:52px}
+.references-header h2{font-family:var(--font-display);font-size:clamp(46px,5.5vw,70px);line-height:.95;margin-top:18px}
+.references-header p{max-width:440px;color:var(--text-secondary);font-size:15px;line-height:1.75;font-weight:300}
+.case-study-card{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);min-height:440px;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;text-decoration:none;color:inherit;transition:transform .35s,border-color .35s,box-shadow .35s}
+.case-study-card:hover{transform:translateY(-5px);border-color:var(--border-hover);box-shadow:0 24px 70px rgba(0,0,0,.3)}
+.case-study-visual{position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:46px;overflow:hidden;background:radial-gradient(circle at 18% 25%,rgba(216,196,175,.20),transparent 34%),linear-gradient(135deg,#191715 0%,#0b0b0b 62%,#12100e 100%)}
+.case-study-visual::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:52px 52px}
+.case-study-visual::after{content:'✦';position:absolute;right:8%;bottom:-24%;font-family:serif;font-size:330px;line-height:1;color:rgba(216,196,175,.065);transform:rotate(12deg)}
+.case-study-label,.case-study-brand,.case-study-signature{position:relative;z-index:1}
+.case-study-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#d8c4af}
+.case-study-brand{font-family:Georgia,serif;font-size:clamp(45px,6vw,78px);font-weight:400;letter-spacing:1px;line-height:.94;color:#f4eee8}
+.case-study-brand span{display:block;margin-top:16px;font-family:var(--font-body);font-size:11px;letter-spacing:5px;text-transform:uppercase;color:#a99b8c}
+.case-study-signature{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#756b62}
+.case-study-content{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.case-study-category{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.case-study-content h3{font-family:var(--font-display);font-size:34px;letter-spacing:1.5px;line-height:1.05;margin-bottom:18px}
+.case-study-content p{color:var(--text-secondary);font-size:14px;line-height:1.8;font-weight:300}
+.case-study-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.case-study-tag{border:1px solid var(--border);border-radius:40px;padding:7px 12px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-muted)}
+.case-study-link{display:flex;align-items:center;gap:10px;margin-top:34px;font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent)}
+.case-study-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .25s}
+.case-study-card:hover .case-study-link svg{transform:translate(4px,-4px)}
+
 .for-who{padding:140px 52px;max-width:1200px;margin:0 auto}
 .for-who-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;margin-top:48px}
 .for-who h2{font-family:var(--font-display);font-size:clamp(44px,5vw,66px);line-height:.93}
@@ -281,7 +308,7 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
   footer{padding:60px 24px 32px}.footer-inner{grid-template-columns:1fr 1fr;gap:36px}.footer-bottom{flex-direction:column;gap:10px;text-align:center}
 }
 @media(max-width:600px){
-  .hero{padding:100px 20px 70px}.services,.proof,.for-who,.process,.pricing,.faq,.contact{padding:64px 20px}.cta-band{margin:32px 20px;padding:52px 20px}footer{padding:48px 20px 28px}.footer-inner{grid-template-columns:1fr}
+  .hero{padding:100px 20px 70px}.services,.proof,.references,.for-who,.process,.pricing,.faq,.contact{padding:64px 20px}.references-header{display:block;margin-bottom:34px}.references-header p{margin-top:20px}.case-study-card{grid-template-columns:1fr;min-height:0}.case-study-visual{min-height:340px;padding:32px 28px}.case-study-content{padding:36px 28px}.case-study-visual::after{font-size:240px}.cta-band{margin:32px 20px;padding:52px 20px}footer{padding:48px 20px 28px}.footer-inner{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -293,6 +320,7 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
   <ul class="nav-links">
     <li><a href="#services">Hizmetler</a></li>
     <li><a href="#results">Sonuçlar</a></li>
+    <li><a href="#references">Referanslar</a></li>
     <li><a href="#pricing">Paketler</a></li>
     <li><a href="#faq">SSS</a></li>
     <li><a href="#contact">İletişim</a></li>
@@ -493,6 +521,33 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
       <div class="testimonial reveal"><div class="testimonial-text">Reklam bütçemi yakıp bitiren 3 ajandan sonra LOOP ile çalıştım. İlk ayda ROAS 1.2'den 3.8'e çıktı. Artık reklamı değil, sonuçları görüyorum.</div><div class="testimonial-author"><div class="author-avatar">AK</div><div><div class="author-name">A. Kaya</div><div class="author-title">E-ticaret Girişimcisi · Giyim</div></div></div></div>
     </div>
     <div style="text-align:center;margin-top:52px"><button class="btn-primary" onclick="scroll2('contact')">Mağazanı Büyüt</button></div>
+  </div>
+</section>
+
+
+<section class="references" id="references">
+  <div class="references-inner">
+    <div class="references-header reveal">
+      <div>
+        <div class="section-tag"><div class="section-tag-line"></div><span>Referanslar</span></div>
+        <h2>Markalara kurduğumuz<br>büyüme altyapıları</h2>
+      </div>
+      <p>Stratejiden tasarıma, Shopify altyapısından dönüşüm yolculuğuna kadar geliştirdiğimiz seçili projeler.</p>
+    </div>
+    <a class="case-study-card reveal" href="https://dvsdiamonds.com" target="_blank" rel="noopener noreferrer" aria-label="DVS Diamonds web sitesini ziyaret et">
+      <div class="case-study-visual">
+        <div class="case-study-label">Featured Project · Fine Jewelry</div>
+        <div class="case-study-brand">DVS<br>Diamonds<span>Gökyüzünün Mücevherleri</span></div>
+        <div class="case-study-signature">Shopify Commerce Experience · 2026</div>
+      </div>
+      <div class="case-study-content">
+        <div class="case-study-category">Shopify · UX/UI · Growth Infrastructure</div>
+        <h3>Dijitalde premium bir mücevher deneyimi</h3>
+        <p>DVS Diamonds için marka hikâyesini, ürün keşfini ve güven unsurlarını tek bir dönüşüm odaklı Shopify deneyiminde bir araya getirdik.</p>
+        <div class="case-study-tags"><span class="case-study-tag">Shopify Development</span><span class="case-study-tag">Conversion UX</span><span class="case-study-tag">Brand Experience</span></div>
+        <div class="case-study-link">Projeyi İncele <svg viewBox="0 0 24 24"><path d="M7 17L17 7M8 7h9v9"/></svg></div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -833,7 +888,7 @@ footer{padding:80px 52px 40px;border-top:1px solid var(--border);margin-top:60px
       </div>
     </div>
     <div class="footer-col"><h5>Hizmetler</h5><ul><li><a href="#services">Shopify Kurulum</a></li><li><a href="#services">Meta Reklam</a></li><li><a href="#services">Funnel Optimizasyon</a></li><li><a href="#services">Kurumsal Web Sitesi</a></li><li><a href="#services">AI SaaS Çözümleri</a></li><li><a href="#services">Global Kurulum</a></li></ul></div>
-    <div class="footer-col"><h5>Şirket</h5><ul><li><a href="#results">Sonuçlar</a></li><li><a href="#process">Süreç</a></li><li><a href="#faq">SSS</a></li><li><a href="#contact">İletişim</a></li><li><a href="blog/index.html">Blog</a></li></ul></div>
+    <div class="footer-col"><h5>Şirket</h5><ul><li><a href="#results">Sonuçlar</a></li><li><a href="#references">Referanslar</a></li><li><a href="#process">Süreç</a></li><li><a href="#faq">SSS</a></li><li><a href="#contact">İletişim</a></li><li><a href="blog/index.html">Blog</a></li></ul></div>
     <div class="footer-col"><h5>Yasal</h5><ul><li><a href="#" onclick="event.preventDefault();document.getElementById('kvkk-modal').classList.add('active')">KVKK Politikası</a></li><li><a href="#">Kullanım Koşulları</a></li><li><a href="#">Çerez Politikası</a></li></ul></div>
   </div>
   <div class="footer-bottom"><p>© 2026 LOOP Agency. Tüm haklar saklıdır.</p><p><a href="#" onclick="event.preventDefault();document.getElementById('kvkk-modal').classList.add('active')">KVKK</a> &nbsp;|&nbsp; <a href="#">Çerezler</a></p></div>
