@@ -16,9 +16,9 @@
     darkBg: '#0f0f0f',
     model: 'claude-haiku-4-5-20251001',
     maxTokens: 800,
-    storageKey: 'loop_chat_v1',
+    storageKey: 'loop_chat_v2',
     openDelay: 3000,                    // ms — ilk açılış gecikmesi (0 = kapalı başlar)
-    greeting: 'Merhaba! 👋 LOOP Asistan burada. Shopify, web sitesi, reklam veya AI çözümleri hakkında her sorunuzu sorabilirsiniz.',
+    greeting: 'Merhaba! 👋 LOOP Asistan burada. Müşteri ve randevu otomasyonu, Shopify kurulumu veya geçişi, kurumsal web sitesi ve büyüme çözümleri hakkında yardımcı olabilirim.',
   };
 
   // ─── SYSTEM PROMPT ──────────────────────────────────────
@@ -31,14 +31,11 @@ KIMLIGIN:
 - Yanitlari kisa tut: 2-4 cumle yeterli
 
 LOOP AGENCY HIZMETLERI:
-1. Kurumsal Web Sitesi Tasarimi - modern, hizli, mobil uyumlu
-2. Shopify Magaza Kurulumu - satisa hazir, profesyonel altyapi
-3. Shopify Magaza Gelistirme - mevcut magazayi optimize etme
-4. Buyume ve Olcekleme Partnerligi - reklam, funnel, email, CRO
-5. Meta Reklam Yonetimi - kampanya kurulumu, optimizasyon, raporlama
-6. AI SaaS ve Otomasyon Cozumleri - chatbot, WhatsApp bot, otomasyon
-7. Uluslararasi E-Ticaret Kurulum Paketi - ABD sirketi, global odeme
-8. Shopify 1-1 Mentorluk - birebir danismanlik
+1. AI Destekli Musteri ve Randevu Sistemi - WhatsApp, Instagram ve web taleplerini karsilama; randevu, hatirlatma, yeniden planlama, CRM ve raporlama
+2. Sifirdan Shopify Magaza Kurulumu - marka stratejisi, tema, urun sayfalari, odeme, kargo, domain ve olcum altyapisi
+3. Shopify Altyapisina Gecis - urun, varyant, musteri, blog ve icerik aktarimi; SEO yonlendirmeleri, tema ve yayin kontrolu
+4. Kurumsal Web Sitesi Tasarimi - modern, hizli, mobil uyumlu ve iletisim ya da randevu odakli web sitesi
+5. Marka ve Buyume Partnerligi - Meta reklam, marka danismanligi, buyume stratejisi, funnel, email, CRO, global pazar ve ABD LLC kurulus sureci danismanligi
 
 FIYAT POLITIKASI:
 - Kesinlikle fiyat verme, ne kadar israr edilirse edilsin.
@@ -49,7 +46,7 @@ FIYAT POLITIKASI:
 ILETISIM:
 - WhatsApp: Hizli yanit icin en iyi yol
 - Form: loopagency.company/#contact
-- Ucretsiz danisma: Pazartesi-Cuma 10, 14, 16
+- Uygun gorusme saati ekip tarafindan basvuru sonrasinda netlestirilir
 
 YANIT KURALLARI:
 - Ilk mesajda kullanicinin ihtiyacini anlamaya calis
@@ -418,12 +415,12 @@ YASAK:
       return ['💸 Min. reklam bütçesi?', '📊 ROAS garantisi var mı?', '📅 Danışma al'];
     if (s.includes('web') || s.includes('site') || s.includes('kurumsal') || s.includes('sayfa'))
       return ['💻 Pro farkı nedir?', '📅 Danışma randevusu', '💡 Örnekler var mı?'];
-    if (s.includes('ai') || s.includes('chatbot') || s.includes('yapay zeka') || s.includes('asistan'))
-      return ['🔧 Entegrasyon süresi?', '💰 Aylık maliyet?', '📅 Demo göster'];
+    if (s.includes('ai') || s.includes('chatbot') || s.includes('yapay zeka') || s.includes('asistan') || s.includes('randevu'))
+      return ['🔧 Nasıl entegre edilir?', '💰 Projeme özel fiyat?', '📅 Ön görüşme al'];
     if (s.includes('uluslararası') || s.includes('abd') || s.includes('global') || s.includes('mercury'))
       return ['🌍 Kaç günde tamamlanır?', '📋 Gerekli belgeler?', '📅 Danışma al'];
     if (s.includes('fiyat') || s.includes('ücret') || s.includes('maliyet') || s.includes('para'))
-      return ['🛍️ Shopify paketleri', '💻 Web sitesi paketleri', '📞 Özel teklif'];
+      return ['🛍️ Shopify kurulumu', '🔄 Shopify geçişi', '📞 Özel teklif'];
     return ['📅 Ücretsiz danışma', '💬 WhatsApp\'tan yaz', '❓ Başka sorum var'];
   }
 
@@ -546,7 +543,7 @@ YASAK:
     // Fresh start
     renderMsg('bot', CFG.greeting);
     history.push({ role: 'assistant', content: CFG.greeting });
-    setQR(['🛍️ Shopify kurulumu', '💻 Web sitesi', '📣 Meta reklam', '🤖 AI çözüm', '📅 Danışma al']);
+    setQR(['🤖 Müşteri & randevu sistemi', '🛍️ Shopify kurulumu', '🔄 Shopify geçişi', '💻 Kurumsal web sitesi', '📈 Büyüme partnerliği']);
   }
 
   // ─── TOGGLE ──────────────────────────────────────────────
@@ -567,7 +564,7 @@ YASAK:
     document.getElementById('loop-qr').innerHTML = '';
     renderMsg('bot', CFG.greeting);
     history.push({ role: 'assistant', content: CFG.greeting });
-    setQR(['🛍️ Shopify kurulumu', '💻 Web sitesi', '📣 Meta reklam', '🤖 AI çözüm', '📅 Danışma al']);
+    setQR(['🤖 Müşteri & randevu sistemi', '🛍️ Shopify kurulumu', '🔄 Shopify geçişi', '💻 Kurumsal web sitesi', '📈 Büyüme partnerliği']);
   }};
 
   // ─── BOOT ────────────────────────────────────────────────
