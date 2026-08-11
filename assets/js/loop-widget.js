@@ -16,7 +16,7 @@
     darkBg: '#0f0f0f',
     model: 'claude-haiku-4-5-20251001',
     maxTokens: 800,
-    storageKey: 'loop_chat_v2',
+    storageKey: 'loop_chat_v3',
     openDelay: 3000,                    // ms — ilk açılış gecikmesi (0 = kapalı başlar)
     greeting: 'Merhaba! 👋 LOOP Asistan burada. Müşteri ve randevu otomasyonu, Shopify kurulumu veya geçişi, kurumsal web sitesi ve büyüme çözümleri hakkında yardımcı olabilirim.',
   };
@@ -44,7 +44,8 @@ FIYAT POLITIKASI:
 - Ucretsiz on gorusmede ihtiyacinizi netlestirip size ozel teklif hazirlayalim de.
 
 ILETISIM:
-- WhatsApp: Hizli yanit icin en iyi yol
+- WhatsApp numarasi: +90 530 143 15 64
+- Kullanici telefon veya WhatsApp numarasini sorarsa yalnizca +90 530 143 15 64 numarasini ver; baska bir numara uretme veya tahmin etme
 - Form: loopagency.company/#contact
 - Uygun gorusme saati ekip tarafindan basvuru sonrasinda netlestirilir
 
@@ -435,6 +436,30 @@ YASAK:
     return ['📅 Ücretsiz danışma', '💬 WhatsApp\'tan yaz', '❓ Başka sorum var'];
   }
 
+  // ─── DIRECT CONTACT ANSWER ───────────────────────────────
+  function getDirectContactAnswer(message) {
+    const normalized = message.toLocaleLowerCase('tr-TR');
+    const asksForNumber =
+      (normalized.includes('whatsapp') || normalized.includes('telefon') || normalized.includes('numara')) &&
+      (normalized.includes('ne') || normalized.includes('nedir') || normalized.includes('kaç') ||
+       normalized.includes('ver') || normalized.includes('yaz') || normalized.includes('ulaş'));
+
+    if (!asksForNumber) return null;
+
+    return {
+      reply: 'Loop Agency WhatsApp numaramız: **+90 530 143 15 64**',
+      cta: {
+        title: 'WhatsApp üzerinden ulaşın',
+        buttons: [{
+          label: 'WhatsApp\'tan yaz',
+          href: `https://wa.me/${CFG.whatsapp.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(CFG.whatsappMsg)}`,
+          icon: '<path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>',
+          primary: true
+        }]
+      }
+    };
+  }
+
   // ─── SEND MESSAGE ────────────────────────────────────────
   async function send() {
     if (isTyping) return;
@@ -449,6 +474,15 @@ YASAK:
 
     renderMsg('user', text);
     history.push({ role: 'user', content: text });
+
+    const directContact = getDirectContactAnswer(text);
+    if (directContact) {
+      renderMsg('bot', directContact.reply, directContact.cta);
+      history.push({ role: 'assistant', content: directContact.reply });
+      try { localStorage.setItem(CFG.storageKey, JSON.stringify(history.slice(-20))); } catch(e) {}
+      setQR(['❓ Başka sorum var']);
+      return;
+    }
 
     isTyping = true;
     sendBtn.disabled = true;
