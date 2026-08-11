@@ -11,7 +11,7 @@
   const CFG = {
     whatsapp: '+905301431564',          // Başında + ile gerçek numaranızı girin
     whatsappMsg: 'Merhaba! Web sitesindeki AI asistanından yönlendirildim, bilgi almak istiyorum.',
-    contactUrl: 'https://loopagency.company/#contact',
+    contactUrl: '#contact',
     primaryColor: '#c8ff00',
     darkBg: '#0f0f0f',
     model: 'claude-haiku-4-5-20251001',
@@ -333,7 +333,18 @@ YASAK:
       const el = document.createElement('a');
       el.className = `loop-cta-btn ${b.primary ? 'primary' : ''}`;
       el.href = b.href;
-      if (b.href.startsWith('http')) { el.target = '_blank'; el.rel = 'noopener'; }
+      if (b.href === CFG.contactUrl) {
+        el.addEventListener('click', event => {
+          event.preventDefault();
+          const contact = document.getElementById('contact');
+          if (!contact) return;
+          if (isOpen) toggle();
+          requestAnimationFrame(() => contact.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+        });
+      } else if (b.href.startsWith('http')) {
+        el.target = '_blank';
+        el.rel = 'noopener';
+      }
       el.innerHTML = `${b.icon ? `<svg viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">${b.icon}</svg>` : ''}${b.label}`;
       btns.appendChild(el);
     });
