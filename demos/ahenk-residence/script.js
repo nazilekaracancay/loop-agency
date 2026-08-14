@@ -1,55 +1,76 @@
 const clamp=(n,min=0,max=1)=>Math.min(max,Math.max(min,n));
+const nav=document.querySelector('[data-nav]');
 const cinematic=document.querySelector('.cinematic');
 const sketch=document.querySelector('.frame-sketch');
 const real=document.querySelector('.frame-real');
-const heroCopy=document.querySelector('.hero-copy');
-const steps=[...document.querySelectorAll('.scroll-story span')];
-const nav=document.querySelector('[data-nav]');
+const copy=document.querySelector('.hero-copy');
+const meta=document.querySelector('.hero-meta');
+const cue=document.querySelector('.scroll-cue');
+const steps=[...document.querySelectorAll('[data-step]')];
+
 let ticking=false;
-function renderScroll(){
-  const rect=cinematic.getBoundingClientRect();
-  const scrollable=cinematic.offsetHeight-window.innerHeight;
-  const p=clamp(-rect.top/Math.max(scrollable,1));
-  const reveal=clamp((p-.18)/.58);
-  sketch.style.opacity=1-reveal;
-  real.style.opacity=reveal;
-  sketch.style.transform=`scale(${1.03+p*.08}) translate3d(0,${p*16}px,0)`;
-  real.style.transform=`scale(${1.08-p*.045}) translate3d(0,${(1-p)*10}px,0)`;
-  real.style.filter=`saturate(${.78+reveal*.22}) brightness(${.88+reveal*.12})`;
-  heroCopy.style.opacity=String(clamp(1-p*1.35));
-  heroCopy.style.transform=`translateY(calc(-49% + ${p*32}px))`;
-  const active=p<.33?0:p<.68?1:2;
-  steps.forEach((s,i)=>s.classList.toggle('active',i===active));
-  nav.classList.toggle('scrolled',window.scrollY>window.innerHeight*.88);
+function updateScroll(){
+  const y=window.scrollY;
+  nav?.classList.toggle('scrolled',y>50);
+  if(cinematic){
+    const rect=cinematic.getBoundingClientRect();
+    const total=cinematic.offsetHeight-window.innerHeight;
+    const p=clamp(-rect.top/Math.max(total,1));
+    const reveal=clamp((p-.12)/.58);
+    if(real){real.style.opacity=reveal;real.style.transform=`scale(${1.08-.07*p})`}
+    if(sketch){sketch.style.opacity=1-clamp((p-.02)/.55);sketch.style.transform=`scale(${1.03+.025*p})`;sketch.style.filter=`sepia(${.1-.1*p}) contrast(${.95+.05*p}) blur(${Math.max(0,(p-.35)*2.2)}px)`}
+    const fade=1-clamp((p-.62)/.22);
+    if(copy){copy.style.opacity=fade;copy.style.transform=`translateY(calc(-49% + ${p*26}px))`}
+    if(meta) meta.style.opacity=1-clamp((p-.72)/.17);
+    if(cue) cue.style.opacity=1-clamp(p/.18);
+    const active=p<.31?0:p<.66?1:2;
+    steps.forEach((s,i)=>s.classList.toggle('active',i===active));
+  }
   ticking=false;
 }
-window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(renderScroll);ticking=true;}},{passive:true});
-renderScroll();
+addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(updateScroll);ticking=true}},{passive:true});
+addEventListener('resize',updateScroll);updateScroll();
 
-const io=new IntersectionObserver(entries=>entries.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('reveal-in');io.unobserve(e.target)}
-}),{threshold:.12});
-document.querySelectorAll('.manifesto-grid,.architecture-showcase,.residence-row,.life-panel,.amenities>div,.payment-card,.location-content').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(28px)';el.style.transition='opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)';io.observe(el)});
-document.head.insertAdjacentHTML('beforeend','<style>.reveal-in{opacity:1!important;transform:none!important}</style>');
+const menuBtn=document.querySelector('[data-menu-btn]');
+const mobileMenu=document.querySelector('[data-mobile-menu]');
+menuBtn?.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open))});
+mobileMenu?.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuBtn?.setAttribute('aria-expanded','false')}));
 
 const modal=document.querySelector('[data-lead-modal]');
 const interest=document.querySelector('[data-interest]');
 document.querySelectorAll('[data-open-lead]').forEach(btn=>btn.addEventListener('click',()=>{
-  interest.value=btn.dataset.openLead||'Genel teklif';
-  if(typeof modal.showModal==='function') modal.showModal(); else modal.setAttribute('open','');
+  if(interest) interest.value=btn.dataset.openLead||'Genel teklif';
+  if(typeof modal?.showModal==='function') modal.showModal();
 }));
-document.querySelector('[data-close-lead]').addEventListener('click',()=>modal.close());
-modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
-
-document.querySelector('[data-lead-form]').addEventListener('submit',e=>{
-  e.preventDefault();
-  const btn=e.currentTarget.querySelector('button[type=submit]');
-  btn.textContent='Talebiniz Alındı ✓';
-  btn.disabled=true;
-  document.querySelector('[data-form-note]').textContent='Teşekkürler. Bu konsept demoda form gönderimi simüle edilmiştir.';
+document.querySelector('[data-close-lead]')?.addEventListener('click',()=>modal?.close());
+modal?.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+document.querySelector('[data-lead-form]')?.addEventListener('submit',e=>{
+  e.preventDefault();const note=document.querySelector('[data-form-note]');
+  if(note){note.textContent='Talebiniz demo akışında alındı. Gerçek projede bu form CRM / WhatsApp / e-posta sistemine bağlanır.';note.style.color='#45624d'}
 });
 
-const menuBtn=document.querySelector('[data-menu-btn]');
-const mobileMenu=document.querySelector('[data-mobile-menu]');
-menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open))});
-mobileMenu.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>mobileMenu.classList.remove('open')));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add('in-view')}),{threshold:.12});
+document.querySelectorAll('.residence-row,.payment-card,.amenities>div').forEach(el=>observer.observe(el));
+
+// Lifestyle cards: subtle scroll-driven cinematic zoom
+(() => {
+  const cards = [...document.querySelectorAll('.life-panel')];
+  if (!cards.length) return;
+  const update = () => {
+    const vh = window.innerHeight || 1;
+    cards.forEach((card) => {
+      const img = card.querySelector('.life-panel-image');
+      const r = card.getBoundingClientRect();
+      const center = r.top + r.height / 2;
+      const distance = Math.min(1, Math.abs(center - vh / 2) / vh);
+      const scale = 1.065 - distance * 0.035;
+      const y = Math.max(-10, Math.min(10, (vh / 2 - center) * 0.012));
+      img.style.transform = `translate3d(0,${y}px,0) scale(${scale})`;
+    });
+  };
+  let raf = 0;
+  const request = () => { if (raf) return; raf = requestAnimationFrame(() => { raf = 0; update(); }); };
+  addEventListener('scroll', request, {passive:true});
+  addEventListener('resize', request);
+  update();
+})();
